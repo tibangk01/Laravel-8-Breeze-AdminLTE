@@ -1,48 +1,85 @@
 <x-guest-layout>
+
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div class="card">
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+            <div class="card-body login-card-body">
 
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                <form action="{{ route('password.update') }}" method="POST">
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+                    @csrf
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+
+                    <div class="input-group mb-3">
+
+                        <input class="form-control" type="email" name="email" value="{{ old('email', $request->email) }}" placeholder="Email" required>
+
+                        <div class="input-group-append">
+
+                            <div class="input-group-text">
+
+                                <span class="fas fa-envelope"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-group mb-3">
+
+                        <input class="form-control" type="password" name="password" placeholder="Password" required autofocus>
+
+                        <div class="input-group-append">
+
+                            <div class="input-group-text">
+
+                                <span class="fas fa-lock"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-group mb-3">
+
+                        <input class="form-control" type="password" name="password_confirmation" placeholder="Password" required>
+
+                        <div class="input-group-append">
+
+                            <div class="input-group-text">
+
+                                <span class="fas fa-lock"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <button type="submit" class="btn btn-primary btn-block">
+
+                                {{ __('Reset Password') }}
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
             </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+        </div>
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
-            </div>
-        </form>
     </x-auth-card>
+
 </x-guest-layout>
