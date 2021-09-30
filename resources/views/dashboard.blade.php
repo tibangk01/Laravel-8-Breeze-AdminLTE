@@ -1,29 +1,17 @@
-<x-app-layout>
+<x-app.layout pageTitle="Dashbord">
 
-    <x-slot name="header">
+    <x-app.content-header pageName="Dashboard">
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
+        <li class="breadcrumb-item "><a href="{{ route('dashboard') }}">Dashboard</a></li>
 
-    </x-slot>
+        <li class="breadcrumb-item active">Home</li>
 
-    <div class="py-12">
+    </x-app.content-header>
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <x-app.content>
 
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <x-app.stat-box />
 
-                <div class="p-6 bg-white border-b border-gray-200">
+    </x-app.content>
 
-                    You're logged in!
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</x-app-layout>
+</x-app.layout>
