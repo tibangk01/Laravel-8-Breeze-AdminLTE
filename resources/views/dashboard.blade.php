@@ -12,6 +12,16 @@
 
         <x-app.stat-box />
 
+        <x-app.demo>
+
+            <a href="{{ route('verification.notice') }}" class="btn btn-primary">Verify Email</a>
+
+            <a href="{{ route('password.confirm') }}" class="btn btn-primary">Confirm Password</a>
+
+        </x-app.demo>
+
+
+
     </x-app.content>
 
 </x-app.layout>

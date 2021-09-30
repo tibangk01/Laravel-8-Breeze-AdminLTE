@@ -78,6 +78,16 @@
 
                 </form>
 
+                @if (Route::has('register'))
+
+                    <p class="mb-1">
+
+                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+
+                    </p>
+
+                @endif
+
                 @if (Route::has('password.request'))
 
                     <p class="mb-1">

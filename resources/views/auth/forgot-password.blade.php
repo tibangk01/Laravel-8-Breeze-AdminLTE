@@ -22,8 +22,7 @@
 
                     <div class="input-group mb-3">
 
-                        <input class="form-control" type="email" name="email" :value="old('email')" placeholder="Email"
-                            required autofocus>
+                        <input class="form-control" type="email" name="email" :value="old('email')" placeholder="Email" required autofocus>
 
                         <div class="input-group-append">
 
@@ -37,9 +36,19 @@
 
                     </div>
 
-                    <div class="row">
+                    <div class="d-flex">
 
-                        <div class="col-12">
+                        <div class="mr-auto p-2">
+
+                            <a href="{{ route('login') }}" class="btn btn-primary btn-block">
+
+                                   <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> {{ __('Back') }}
+
+                            </a>
+
+                        </div>
+
+                        <div class="p-2">
 
                             <button type="submit" class="btn btn-primary btn-block">
 
