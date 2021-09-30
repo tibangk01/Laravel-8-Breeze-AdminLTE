@@ -1,6 +1,20 @@
-<x-guest-layout>
+<x-guest.layout>
 
-    <x-auth-card>
+    <x-guest.card>
+
+        @if (session('status') == 'verification-link-sent')
+
+            <div class="row text-center pb-3">
+
+                <div class="col-md-12">
+
+                    {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+
+                </div>
+
+            </div>
+
+        @endif
 
         <div class="card">
 
@@ -9,16 +23,6 @@
                 {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
 
             </div>
-
-            @if (session('status') == 'verification-link-sent')
-
-                <div class="text-justify pt-2 pl-2 pr-2">
-
-                    {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-
-                </div>
-
-            @endif
 
             <div class="card-body login-card-body">
 
@@ -66,6 +70,6 @@
 
         </div>
 
-    </x-auth-card>
+    </x-guest.card>
 
-</x-guest-layout>
+</x-guest.layout>

@@ -89,7 +89,7 @@
                     <img src="{{ asset('img/adminLTE/avatar.png') }}" class="img-circle"
                         alt="User Image" />
                     <p>
-                        John Doe
+                        {{ Auth::user()->name }}
                         <small>Developer</small>
                     </p>
                 </li>

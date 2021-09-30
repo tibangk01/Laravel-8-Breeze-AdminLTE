@@ -1,6 +1,10 @@
 <x-guest.layout>
 
-    <x-auth-card>
+    <x-guest.card>
+
+        <x-guest.session-status :status="session('status')" />
+
+        <x-guest.validation-errors :errors="$errors" />
 
         <div class="card">
 
@@ -88,6 +92,6 @@
 
         </div>
 
-    </x-auth-card>
+    </x-guest.card>
 
 </x-guest.layout>
